@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #020202;
+  --color-foreground: #ffffff;
+  --color-primary: #e11d48;
+  --color-primary-foreground: #ffffff;
+  --color-card: transparent;
+  --color-card-foreground: #ffffff;
+  --color-border: rgba(255, 255, 255, 0.05);
+}
+
+@layer base {
+  :root {
+    --background: #020202;
+    --foreground: #ffffff;
+    --primary: #e11d48;
+    --border: rgba(255, 255, 255, 0.05);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .noise {
+    position: relative;
+  }
+  .noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E");
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  }
+  
+  .primary-glow {
+    text-shadow: 0 0 40px rgba(225, 29, 72, 0.6);
+  }
+
+  .blend-overlay {
+    mix-blend-mode: overlay;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020202; 
+}
+::-webkit-scrollbar-thumb {
+  background: #1a1a1a; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333; 
+}
