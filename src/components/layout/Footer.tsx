@@ -1,8 +1,18 @@
 "use client";
 
+import { useEffect } from "react";
 import Image from "next/image";
 
 export function Footer() {
+  useEffect(() => {
+    console.log(
+      "%c🚀 Desenvolvido em parceria com a NeonScale (https://neonscale.com.br/)%c\n%c☁️ Hospedado gratuitamente pela TheNight Tecnologia LTDA (https://tn.tec.br/)",
+      "color: #e11d48; font-size: 14px; font-weight: bold; padding: 4px 0;",
+      "",
+      "color: #10b981; font-size: 12px; font-weight: normal; padding-bottom: 8px;"
+    );
+  }, []);
+
   return (
     <footer className="w-full bg-black py-24 border-t border-white/10">
       <div className="container px-6 md:px-12 mx-auto">
@@ -28,6 +38,9 @@ export function Footer() {
           <p className="mt-4 md:mt-0">SÃO PAULO - BRASIL</p>
         </div>
       </div>
+      
+      {/* Hidden Signature for Code Inspectors */}
+      <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: "<!-- \n  Desenvolvido em parceria com a NeonScale: https://neonscale.com.br/ \n  Hospedado gratuitamente pela TheNight Tecnologia LTDA: https://tn.tec.br/ \n-->" }} />
     </footer>
   );
 }

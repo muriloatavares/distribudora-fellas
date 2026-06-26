@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full md:w-1/2 h-[60vh] md:h-[80vh] flex items-center justify-center md:justify-end mt-12 md:mt-0"
+          className="hidden md:flex relative w-full md:w-1/2 h-[60vh] md:h-[80vh] items-center justify-center md:justify-end mt-12 md:mt-0"
         >
           <div className="relative w-full h-full max-w-[400px]">
             <Image 
